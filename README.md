@@ -44,5 +44,5 @@ By default, only eight classes (`active`, `focus`, `hover`, `visited`, `after`, 
 To enable more pseudo classes, initialise pseudoInlineStyles with an object that contains an array of the addtional classes, with `pseudoStyleTypes` as its key:
 
 ```html
-<script>pseudoInlineStyles.enable({pseudoStyleTypes: ['focus-within', 'last-child']})</script>
+<script>pseudoInlineStyles.enable({pseudoStyleTypes: ['focus-within', 'last-child']});</script>
 ```
