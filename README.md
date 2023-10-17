@@ -7,7 +7,7 @@
 
 Add the CDN to the head of your HTML.
 ```html
-<script src="https://cdn.jsdelivr.net/gh/dara-tobi/pseudo-inline-styles/src/pseudo-inline-styles.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dara-tobi/pseudo-inline-styles@1.0.1/src/pseudo-inline-styles.js"></script>
 ```
 
 ## Usage
