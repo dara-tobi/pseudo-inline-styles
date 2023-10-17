@@ -22,12 +22,14 @@ Add the intialisation script at the end of the body in your HTML.
 Then you can write pseudo classes like `:after`, `:focus`, `:hover`, e.t.c., in your HTML; like so
 
 ```html
-<a href="#" id="primary-link" class="button expanded large" style="
+<a href="#" id="primary-link" class="button large" style="
   :after: content: ' SOFTWARE';
   :focus: text-decoration: underline !important;
+  :focus: border-radius: 10px;
   :focus-within: border-bottom: 2px solid crimson !important;
   :hover: background-color: red !important;
-  :active: outline: 4px  solid  black;
+  :hover: color: black !important;
+  :active: outline: 4px solid black;
   text-decoration: none;
   color: white;
   background-color: #005493;
