@@ -19,13 +19,19 @@ const pseudoInlineStyles = {
 
         // Extract the inline style for the pseudo-class
         const elementInlineStyle = element.getAttribute('style');
-        const pseudoStyleMatch = elementInlineStyle.match(new RegExp(`\\b${pseudoStyleType}:(.*?)(;|$)`));
+        const pseudoStyleRegex = new RegExp(`:${pseudoStyleType}:(.*?);`, 'gi');
+        // Match the pseudo style definition
+        const pseudoStyleMatches = elementInlineStyle.match(pseudoStyleRegex);
 
-        if (pseudoStyleMatch) {
-          const pseudoStyleDefinition = pseudoStyleMatch[1];
-          // Create the CSS rule
-          const cssRuleForPseudoStyle = `${elementSelector}:${pseudoStyleType} { ${pseudoStyleDefinition.trim()}; }`;
-          cssRules.push(cssRuleForPseudoStyle);
+        if (pseudoStyleMatches) {
+          // Loop through the matches
+          pseudoStyleMatches.forEach((pseudoStyleMatch) => {
+            // Extract the pseudo style definition
+            const pseudoStyleDefinition = pseudoStyleMatch.replace(`:${pseudoStyleType}:`, '');
+            // Create the CSS rule
+            const cssRuleForPseudoStyle = `${elementSelector}:${pseudoStyleType} { ${pseudoStyleDefinition.trim()}; }`;
+            cssRules.push(cssRuleForPseudoStyle);
+          });
         }
       });
     });
